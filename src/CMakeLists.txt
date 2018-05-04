@@ -5,7 +5,8 @@
 # Author: Pablo Alvarado
 # Date  : 28.12.2017
 
-find_package (Boost COMPONENTS system filesystem REQUIRED)
+find_package (Boost 1.66.0 EXACT COMPONENTS system filesystem REQUIRED)
+
 include_directories (${CMAKE_SOURCE_DIR}/include ${Boost_INCLUDE_DIRS})
 
 file(GLOB SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp)
@@ -42,8 +43,20 @@ if (OPENMP_FOUND)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif()
 
+
+#find_package(BLAS)
+#find_package(LAPACK)
+#if(LAPACK_FOUND AND BLAS_FOUND)
+#   set(lapackblas_libraries ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES})
+#endif()
+
+#target_link_libraries(code_exe ${lapackblas_libraries})
+
+
+
+
 CONFIGURE_FILE(${CMAKE_SOURCE_DIR}/cmake/AnpiConfig.hpp.in ${CMAKE_SOURCE_DIR}/include/AnpiConfig.hpp)
 
 add_library(anpi STATIC ${SRCS} ${HEADERS})
 add_executable(tarea03 main.cpp)
-target_link_libraries(tarea03 anpi python2.7)
+target_link_libraries(tarea03 anpi python2.7) #${lapackblas_libraries})
