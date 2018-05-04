@@ -1,0 +1,16 @@
+/home/cristian/Documents/lu-simd/build/CMakeFiles/test.dir
+/home/cristian/Documents/lu-simd/build/CMakeFiles/edit_cache.dir
+/home/cristian/Documents/lu-simd/build/CMakeFiles/rebuild_cache.dir
+/home/cristian/Documents/lu-simd/build/src/CMakeFiles/test.dir
+/home/cristian/Documents/lu-simd/build/src/CMakeFiles/anpi.dir
+/home/cristian/Documents/lu-simd/build/src/CMakeFiles/rebuild_cache.dir
+/home/cristian/Documents/lu-simd/build/src/CMakeFiles/edit_cache.dir
+/home/cristian/Documents/lu-simd/build/src/CMakeFiles/tarea03.dir
+/home/cristian/Documents/lu-simd/build/test/CMakeFiles/test.dir
+/home/cristian/Documents/lu-simd/build/test/CMakeFiles/edit_cache.dir
+/home/cristian/Documents/lu-simd/build/test/CMakeFiles/rebuild_cache.dir
+/home/cristian/Documents/lu-simd/build/test/CMakeFiles/tester.dir
+/home/cristian/Documents/lu-simd/build/benchmarks/CMakeFiles/test.dir
+/home/cristian/Documents/lu-simd/build/benchmarks/CMakeFiles/edit_cache.dir
+/home/cristian/Documents/lu-simd/build/benchmarks/CMakeFiles/rebuild_cache.dir
+/home/cristian/Documents/lu-simd/build/benchmarks/CMakeFiles/benchmark.dir
