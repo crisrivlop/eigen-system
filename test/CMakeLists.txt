@@ -25,6 +25,26 @@ if (OPENMP_FOUND)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif()
 
+
+
+find_package(BLAS REQUIRED)
+find_package(LAPACK REQUIRED)
+if(LAPACK_FOUND AND BLAS_FOUND)
+   set(lapackblas_libraries  ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES})
+   message(${lapackblas_libraries})
+endif()
+
+
+include(${CMAKE_CURRENT_SOURCE_DIR}/lapacke-config.cmake)
+#set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/" ${CMAKE_MODULE_PATH})
+find_package(LAPACKE REQUIRED)
+if(LAPACKE_FOUND)
+	message("LAPACKE IS NOT FOUND IN TESTER CMAKE FILE")
+	message(${LAPACKE_LIBRARIES})
+	set(lapackelib ${LAPACKE_LIBRARIES})
+endif()
+
+
 file(GLOB TEST_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp *.hpp)
 
 add_executable (tester ${TEST_SRCS})
@@ -32,6 +52,6 @@ target_link_libraries (tester
                        anpi
                        ${Boost_FILESYSTEM_LIBRARY}
                        ${Boost_SYSTEM_LIBRARY}
-                       ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+                       ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY} ${lapackblas_libraries} ${lapackelib})
 
 add_test(NAME tester COMMAND tester)

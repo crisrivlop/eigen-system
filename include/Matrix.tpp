@@ -331,7 +331,7 @@ template<class T, class Alloc,typename regType>
       size_t pos = 0;
       for (;pos < entries;){
         *ptr++ = el_tio_fill;
-        pos+=sizeof(regType);
+        pos+=colw<T,regType>();
       }
 
 }
